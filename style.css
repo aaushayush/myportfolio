@@ -1,0 +1,204 @@
+/* ===== Fonts & Theme ===== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+:root {
+  --primary: #0047ab;      /* blue: header, table head, buttons */
+  --primary-dark: #00337d; /* hover state */
+  --bg: #f4f4f4;           /* page background */
+  --text: #222222;         /* body text */
+  --white: #ffffff;
+}
+
+/* ===== Base Styles ===== */
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+
+body {
+  margin: 0;
+  font-family: 'Poppins', Arial, sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  text-align: center;
+}
+
+h1, h2, h3 { margin: 0 0 12px; }
+h2 { font-size: 1.4rem; }
+h3 { font-size: 1.05rem; }
+
+/* ===== Header & Navigation (sticky) ===== */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: var(--primary);
+  color: var(--white);
+  padding: 12px 20px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+}
+
+header h1 { margin: 0; font-size: 1.6rem; }
+
+nav a {
+  display: inline-block;
+  padding: 4px 10px;
+  color: var(--white);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  border-radius: 4px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+nav a:hover,
+nav a:focus-visible {
+  background-color: var(--white);
+  color: var(--primary);
+}
+
+/* ===== Sections (Box Model) ===== */
+main { max-width: 900px; margin: 0 auto; }
+
+section { padding: 30px 20px; margin: 0 auto; }
+
+/* ===== Visual Elements ===== */
+hr {
+  border: none;
+  border-top: 2px solid #bdbdbd;
+  margin: 0;
+}
+
+.profile-img {
+  display: block;
+  width: 260px;
+  max-width: 100%;
+  height: auto;
+  margin: 10px auto 20px;
+  border-radius: 50%;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+}
+
+/* ===== Skills Table ===== */
+.skills-table {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  border-collapse: collapse;
+  background-color: var(--white);
+}
+
+.skills-table th,
+.skills-table td {
+  padding: 8px 12px;
+  border: 1px solid var(--primary);
+  text-align: center;
+}
+
+.skills-table th {
+  background-color: var(--primary);
+  color: var(--white);
+  font-weight: 700;
+}
+
+.skills-table tbody tr:nth-child(even) { background-color: #e8effa; }
+
+/* ===== Project Cards ===== */
+.project-card {
+  max-width: 500px;
+  margin: 0 auto 10px;
+  padding: 14px 20px;
+  background-color: var(--white);
+  border: 1px solid #dcdcdc;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.project-card p { margin: 0; font-size: 0.9rem; }
+
+/* ===== Contact Form ===== */
+.contact-table {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  border-collapse: collapse;
+  background-color: var(--white);
+}
+
+.contact-table td {
+  padding: 8px 12px;
+  border: 1px solid var(--primary);
+  font-size: 0.9rem;
+}
+
+.contact-table td:first-child { width: 30%; }
+
+input,
+textarea {
+  width: 100%;
+  padding: 6px 8px;
+  font-family: inherit;
+  font-size: 0.85rem;
+  border: 1px solid #888;
+  border-radius: 3px;
+}
+
+input:focus,
+textarea:focus {
+  outline: 2px solid var(--primary);
+  border-color: var(--primary);
+}
+
+textarea { resize: vertical; }
+
+/* ===== Buttons ===== */
+button,
+.back-to-top {
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-weight: 500;
+  background-color: var(--primary);
+  color: var(--white);
+  padding: 8px 24px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover,
+.back-to-top:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-2px);
+}
+
+/* ===== Back to Top (fixed positioning) ===== */
+.back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  text-decoration: none;
+  z-index: 200;
+}
+
+/* ===== Footer ===== */
+footer {
+  background-color: var(--primary);
+  color: var(--white);
+  padding: 8px;
+  font-size: 0.85rem;
+}
+
+footer p { margin: 0; }
+
+/* ===== Responsive ===== */
+@media (max-width: 600px) {
+  section { padding: 20px 12px; }
+  .contact-table td:first-child { width: 35%; }
+  .back-to-top { padding: 8px 14px; bottom: 12px; right: 12px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { transition: none !important; }
+}
